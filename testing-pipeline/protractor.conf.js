@@ -9,7 +9,8 @@ exports.config = {
         'browserName': 'chrome'
     },
 
-    directConnect: true,
+    // directConnect: true,
+    seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
 
     // Framework definition - tells Protractor to use Serenity/JS
     framework: 'custom',
