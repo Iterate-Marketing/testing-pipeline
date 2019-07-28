@@ -6,11 +6,9 @@ const isCI = () => process.env.CI && process.env.CI === 'true';
  */
 exports.config = {
 
-    baseUrl: 'http://communitymgt.iteratemarketing.com',
-    SELENIUM_PROMISE_MANAGER: false,
+    baseUrl: 'https://www.angularjs.org/',
 
-    // directConnect: true,
-    seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
+    directConnect: true,
 
     // https://github.com/angular/protractor/blob/master/docs/timeouts.md
     allScriptsTimeout: 110000,
