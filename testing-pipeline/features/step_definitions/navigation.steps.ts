@@ -1,12 +1,8 @@
-import {Navigation} from './pages/Navigation';
-import {browser} from "protractor";
+import {browser} from 'protractor';
+import {Navigation} from '../pages/Navigation';
+import { expect } from './../support/expect';
 
-const chai = require('chai');
-chai.use(require('chai-as-promised'));
-
-const expect = chai.expect;
-
-export = function myStepDefinitions() {
+module.exports = function myStepDefinitions() {
     this.setDefaultTimeout(60 * 1000);
 
     this.Before(async () => {
@@ -21,8 +17,7 @@ export = function myStepDefinitions() {
         await Navigation.openPage(pageName);
         const index: number = pageName.indexOf(' ');
         const uri: string = pageName.substr(0, index).toLowerCase();
-        expect(await browser.getCurrentUrl()).contain(uri, pageName + " is not opened.");
+        expect(await browser.getCurrentUrl()).contain(uri, pageName + ' is not opened.');
     });
-
 
 };

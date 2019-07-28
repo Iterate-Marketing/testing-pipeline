@@ -1,39 +1,46 @@
-// Protractor configuration file, see link for more information
-// https://github.com/angular/protractor/blob/master/lib/config.ts
-const crew = require('serenity-js/lib/stage_crew');
+const isCI = () => process.env.CI && process.env.CI === 'true';
 
+/**
+ * To learn more about the protractor.conf.js check out:
+ * https://github.com/angular/protractor/blob/master/lib/config.ts
+ */
 exports.config = {
-    baseUrl: 'http://communitymgt.iteratemarketing.com',
 
-    capabilities: {
-        'browserName': 'chrome'
-    },
+    baseUrl: 'http://communitymgt.iteratemarketing.com',
+    SELENIUM_PROMISE_MANAGER: false,
 
     // directConnect: true,
     seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
 
-    // Framework definition - tells Protractor to use Serenity/JS
+    // https://github.com/angular/protractor/blob/master/docs/timeouts.md
+    allScriptsTimeout: 110000,
+
+    // Load Serenity/JS
     framework: 'custom',
     frameworkPath: require.resolve('serenity-js'),
+
     specs: [ 'features/**/*.feature' ],
 
     cucumberOpts: {
-        require:    [ 'features/**/step_definitions/*.ts' ], // loads step definitions
-        format:     'pretty',               // enable console output
-        compiler:   'ts:ts-node/register'   // interpret step definitions as TypeScript
+        require:    [ 'features/**/*.ts' ],
+        format:     'pretty',
+        compiler:   'ts:ts-node/register'
     },
 
-    serenity: {
-        crew:    [
-            crew.serenityBDDReporter(),
-            crew.consoleReporter(),
-            crew.Photographer.who(_ => _
-                .takesPhotosOf(_.Tasks_and_Interactions)
-                .takesPhotosWhen(_.Activity_Finishes)
-            )
-        ],
-        dialect: 'cucumber',
-        stageCueTimeout: 30 * 1000   // up to 30 seconds by default
-    }
+    capabilities: {
+        browserName: 'chrome',
 
+        chromeOptions: {
+            args: [
+                '--disable-infobars',
+                '--headless',
+                '--disable-gpu',
+                '--window-size=800,600'
+            ].
+
+            // Required on Travis CI when running the build without sudo
+            // https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai#running_it_all_on_travis_ci
+            concat(isCI() ? ['--no-sandbox'] : [])
+        }
+    }
 };
