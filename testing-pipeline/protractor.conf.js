@@ -1,13 +1,12 @@
-const isCI = () => process.env.CI && process.env.CI === 'true';
-
 /**
  * To learn more about the protractor.conf.js check out:
  * https://github.com/angular/protractor/blob/master/lib/config.ts
  */
 exports.config = {
 
-    baseUrl: 'https://www.angularjs.org/',
+    baseUrl: 'http://communitymgt.iteratemarketing.com',
 
+    // directConnect: true,
     seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
 
     // https://github.com/angular/protractor/blob/master/docs/timeouts.md
@@ -17,28 +16,28 @@ exports.config = {
     framework: 'custom',
     frameworkPath: require.resolve('serenity-js'),
 
-    specs: [ 'features/**/*.feature' ],
+    specs: ['features/**/*.feature'],
 
     cucumberOpts: {
-        require:    [ 'features/**/*.ts' ],
-        format:     'pretty',
-        compiler:   'ts:ts-node/register'
+        require: ['features/**/*.ts'],
+        format: 'pretty',
+        compiler: 'ts:ts-node/register'
     },
 
     capabilities: {
         browserName: 'chrome',
-
         chromeOptions: {
             args: [
                 '--disable-infobars',
                 '--headless',
                 '--disable-gpu',
                 '--window-size=800,600'
-            ].
-
-            // Required on Travis CI when running the build without sudo
-            // https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai#running_it_all_on_travis_ci
-            concat(isCI() ? ['--no-sandbox'] : [])
+            ]
         }
+    },
+    params:{
+        Trigger_Delay: 2000,
+        Not_Long_Enough: 500,
+        Long_Enough: 10000
     }
 };

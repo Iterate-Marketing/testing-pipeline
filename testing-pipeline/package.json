@@ -1,8 +1,6 @@
 {
   "name": "serenity-js-seed-cucumber",
   "version": "1.0.0",
-  "description": "A starting point for your automated acceptance tests",
-  "main": "index.js",
   "scripts": {
     "clean": "rimraf target",
     "preprotractor": "webdriver-manager update",
@@ -11,20 +9,6 @@
     "report": "serenity run",
     "test": "failsafe clean protractor report"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/serenity-js/seed-cucumber.git"
-  },
-  "keywords": [
-    "serenity-js",
-    "seed"
-  ],
-  "author": "Jan Molak <jan.molak@smartcodeltd.co.uk>",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/serenity-js/seed-cucumber/issues"
-  },
-  "homepage": "https://github.com/serenity-js/seed-cucumber#readme",
   "devDependencies": {
     "@types/chai": "4.1.4",
     "@types/chai-as-promised": "7.1.0",
