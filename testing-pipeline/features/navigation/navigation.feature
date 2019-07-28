@@ -6,5 +6,5 @@ Feature: Navigate through the application
 
   Scenario: User is able to navigate MANAGEMENT submenus
     Given User opens the Home page
-    Then he opens the MANAGEMENT page
+#    Then he opens the MANAGEMENT page
 
