@@ -8,7 +8,7 @@ exports.config = {
 
     baseUrl: 'https://www.angularjs.org/',
 
-    directConnect: true,
+    seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
 
     // https://github.com/angular/protractor/blob/master/docs/timeouts.md
     allScriptsTimeout: 110000,
