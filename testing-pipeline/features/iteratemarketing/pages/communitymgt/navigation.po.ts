@@ -1,6 +1,7 @@
 import {browser, element, by, By, $, $$, ExpectedConditions, promise, protractor, Key, ElementFinder} from 'protractor';
-import { BasePage } from './/BasePage';
-export class Navigation extends BasePage {
+import {BasePo} from "../base.po";
+
+export class NavigationPo extends BasePo {
     private static Hamburger_Icon: ElementFinder = element(by.css('button[data-toggle="offcanvas"]'));
     // Main menus
     private static  Home_Main_Menu: ElementFinder = element(by.linkText('Home'));
@@ -90,4 +91,5 @@ export class Navigation extends BasePage {
         await subMenu.click();
         await browser.wait(ExpectedConditions.visibilityOf(element(by.id('page-content-wrapper'))), 10000);
     }
+
 }

@@ -1,3 +1,4 @@
+@communitymgt
 Feature: Navigate through the application
 
   In order to focus on things that matter
@@ -19,4 +20,6 @@ Feature: Navigate through the application
     Then he opens the "REPUTATION" page
     Then he opens the "CMI JOURNAL" page
 
-
+  Scenario: Verify that user can navigate to CODE OF ETHICS page
+    Given that User opens the Home page
+    When he opens the CODE OF ETHICS page

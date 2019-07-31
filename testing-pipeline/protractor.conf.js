@@ -18,7 +18,7 @@ exports.config = {
     specs: [ 'features/**/*.feature' ],
 
     cucumberOpts: {
-        require:    [ 'features/**/step_definitions/*.ts' ], // loads step definitions
+        require:    [ 'features/**/step_definitions/**/*.ts' ], // loads step definitions
         format:     'pretty',               // enable console output
         compiler:   'ts:ts-node/register'   // interpret step definitions as TypeScript
     },
@@ -35,5 +35,5 @@ exports.config = {
         dialect: 'cucumber',
         stageCueTimeout: 30 * 1000   // up to 30 seconds by default
     }
-
 };
+

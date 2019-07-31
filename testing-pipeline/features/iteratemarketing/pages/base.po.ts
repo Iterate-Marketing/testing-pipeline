@@ -1,5 +1,5 @@
 import { browser, element, by} from 'protractor';
-export class BasePage {
+export class BasePo {
     async clickClassButton(className: string, ans: string) {
         ans = ans.trim().toLowerCase();
         await console.log("ANSWER : " + ans);

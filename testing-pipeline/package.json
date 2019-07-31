@@ -13,8 +13,7 @@
     "report": "serenity run",
     "test": "failsafe clean lint e2e report",
     "webdriver:update": "webdriver-manager update",
-    "proxy": "webdriver-manager start",
-    "open-report": "opn target/site/serenity/index.html"
+    "proxy": "webdriver-manager start"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
