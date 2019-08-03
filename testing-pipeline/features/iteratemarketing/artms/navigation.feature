@@ -5,7 +5,6 @@ Feature: Navigate through the TMS application
   User would like to navigate through the application
   to validate it is working as expected
 
-  @test1
   Scenario: User is able to navigate to others page
     Given that User opens the TMS Home page
     Then he open the "Treat Depression" page
