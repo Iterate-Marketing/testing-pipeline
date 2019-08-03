@@ -5,15 +5,13 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf target",
-    "lint": "tslint --config tslint.json --project ./tsconfig.json --format stylish",
-    "pretest": "serenity update",
-    "pree2e": "npm run lint && npm run webdriver:update",
-    "e2e": "protractor ./protractor.conf.js",
-    "e2e-single": "protractor ./protractor.conf.js --cucumberOpts.name",
-    "report": "serenity run",
-    "test": "failsafe clean lint e2e report",
+    "serenity:update": "serenity update",
     "webdriver:update": "webdriver-manager update",
-    "proxy": "webdriver-manager start"
+    "pree2e": "npm run clean && npm run serenity:update && npm run webdriver:update",
+    "e2e": "protractor ./protractor.conf.js",
+    "e2e-tag": "npm run e2e -- --cucumberOpts.tags",
+    "e2e-scenario": "npm run e2e -- --cucumberOpts.name",
+    "report": "serenity run"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",

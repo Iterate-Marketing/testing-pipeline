@@ -10,7 +10,7 @@ export = function NavigationPoDefinitions() {
     this.setDefaultTimeout(60 * 1000);
 
     this.Given(/^that User opens the TMS Home page$/, async () => {
-        await browser.get("http://artms.iteratemarketing.com");
+        await browser.get(browser.params.artms);
     });
 
     this.Then(/^he open the "([^"]*)" page$/, async (pageName: string) => {
@@ -64,6 +64,53 @@ export = function NavigationPoDefinitions() {
 
     this.Then(/^Verify that user is on about us page$/, async () => {
         expect(browser.driver.getCurrentUrl()).to.eventually.contain("about");
+    });
+
+    this.Then(/^click on Helpful Video link in footer section$/, async ()=> {
+        await NavigationPo.clickOnHelpfulVideosLink();
+    });
+
+    this.Then(/^verify that user is on video hub page$/, async ()=> {
+        expect(browser.driver.getCurrentUrl()).to.eventually.contain("video-hub");
+    });
+
+    this.Then(/^click on FAQ link in footer section$/, async ()=> {
+        await NavigationPo.clickOnFAQLink();
+    });
+    this.Then(/^verify that user is on FAQ page$/, async ()=> {
+        expect(browser.driver.getCurrentUrl()).to.eventually.contain("faq");
+    });
+
+    this.Then(/^click on TMS Insights link in footer section$/, async ()=> {
+        await NavigationPo.clickOnTMSInsightsLink();
+    });
+
+    this.Then(/^verify that user is on TMS Insights page$/, async ()=> {
+        expect(browser.driver.getCurrentUrl()).to.eventually.contain("tms-insights");
+    });
+
+    this.Then(/^click on Patient Portal Login Instructions link$/, async ()=> {
+        await NavigationPo.clickOnPatientPortalLoginInstructionsLink();
+    });
+
+    this.Then(/^verify that user is on Patient Portal Login Instructions page$/, async ()=> {
+        expect(browser.driver.getCurrentUrl()).to.eventually.contain("atient-portal-login-instructions");
+    });
+
+    this.Then(/^click on First Time patient Documents link in footer section$/, async ()=> {
+        await NavigationPo.clickOnFirstTimePatientDocuments();
+    });
+
+    this.Then(/^verify that user is on First Time patient Document page$/, async ()=> {
+        expect(browser.driver.getCurrentUrl()).to.eventually.contain("first-time-patient-documents");
+    });
+
+    this.Then(/^click on For Providers link in footer section$/, async()=> {
+        await NavigationPo.clickOnForProvidersLink();
+    });
+
+    this.Then(/^verify that user is on ForProviders page$/, async()=> {
+        expect(browser.driver.getCurrentUrl()).to.eventually.contain("patient-providers");
     });
 
 }

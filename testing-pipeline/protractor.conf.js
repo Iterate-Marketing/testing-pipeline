@@ -3,14 +3,17 @@
 const crew = require('serenity-js/lib/stage_crew');
 
 exports.config = {
-    baseUrl: 'http://communitymgt.iteratemarketing.com',
+    params: {
+        communitymgt: 'http://communitymgt.iteratemarketing.com',
+        artms: 'http://artms.iteratemarketing.com',
+    },
 
     capabilities: {
         'browserName': 'chrome'
     },
 
-    // directConnect: true,
-    seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
+    directConnect: true,
+    // seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
 
     // Framework definition - tells Protractor to use Serenity/JS
     framework: 'custom',

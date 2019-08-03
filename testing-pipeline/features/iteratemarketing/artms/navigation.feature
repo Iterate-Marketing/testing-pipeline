@@ -5,6 +5,7 @@ Feature: Navigate through the TMS application
   User would like to navigate through the application
   to validate it is working as expected
 
+  @test1
   Scenario: User is able to navigate to others page
     Given that User opens the TMS Home page
     Then he open the "Treat Depression" page
@@ -42,3 +43,33 @@ Feature: Navigate through the TMS application
     Given that User opens the TMS Home page
     Then click on About us link in footer section
     And Verify that user is on about us page
+
+  Scenario: Verify that user is able to navigate to video hub page
+    Given that User opens the TMS Home page
+    Then click on Helpful Video link in footer section
+    And verify that user is on video hub page
+
+  Scenario: Verify that user is able to navigate to FAQ page
+    Given that User opens the TMS Home page
+    Then click on FAQ link in footer section
+    And verify that user is on FAQ page
+
+  Scenario: Verify that user is able to navigate TMS insights page in footer section
+    Given that User opens the TMS Home page
+    Then click on TMS Insights link in footer section
+    And verify that user is on TMS Insights page
+
+  Scenario: Verify that user is able to navigate Patient Portal Login Instructions page
+    Given that User opens the TMS Home page
+    Then click on Patient Portal Login Instructions link
+    And verify that user is on Patient Portal Login Instructions page
+
+  Scenario: Verify that user is able to navigate first-time-patient-documents page
+    Given that User opens the TMS Home page
+    Then click on First Time patient Documents link in footer section
+    And verify that user is on First Time patient Document page
+
+  Scenario: Verify that user is able to navigate to For Providers page using footer section
+    Given that User opens the TMS Home page
+    Then click on For Providers link in footer section
+    And verify that user is on ForProviders page

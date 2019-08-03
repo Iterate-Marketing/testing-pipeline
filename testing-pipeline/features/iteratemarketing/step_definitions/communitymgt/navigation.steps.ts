@@ -15,7 +15,7 @@ export = function NavigationPoDefinitions() {
     });
 
     this.Given(/^that User opens the Home page$/, async () => {
-        await browser.get(browser.baseUrl);
+        await browser.get(browser.params.communitymgt);
     });
 
     this.Then(/^he opens the "([^"]*)" page$/, async (pageName: string) => {
