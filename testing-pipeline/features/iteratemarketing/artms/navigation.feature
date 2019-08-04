@@ -43,6 +43,7 @@ Feature: Navigate through the TMS application
     Then click on About us link in footer section
     And Verify that user is on about us page
 
+    @test1
   Scenario: Verify that user is able to navigate to video hub page
     Given that User opens the TMS Home page
     Then click on Helpful Video link in footer section
@@ -72,3 +73,8 @@ Feature: Navigate through the TMS application
     Given that User opens the TMS Home page
     Then click on For Providers link in footer section
     And verify that user is on ForProviders page
+
+  Scenario: Verify that user is able to navigate portland link
+    Given that User opens the TMS Home page
+    Then click on portland link in footer section
+    And Verify that user is on portland page

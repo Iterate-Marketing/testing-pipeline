@@ -7,6 +7,7 @@ export class NavigationPo extends BasePo {
     private static tms_result_main_menu: ElementFinder = element(by.css('a[title="TMS Results"]'));
     private static tms_result: ElementFinder = element.all(by.css('a[title="TMS Results"]')).last();
     private static tms_Defined: ElementFinder = element(by.xpath("//a[text()='TMS Defined']"));
+    private static tms_insight: ElementFinder = element(by.xpath("//a[text()='TMS Insight']"));
     private static about_us_main_menu: ElementFinder = element(by.css('a[title="About Us"]'));
     private static about_us: ElementFinder = element.all(by.css('a[title="About Us"]')).last();
     private static tms_insights: ElementFinder = element(by.css('a[title="TMS Insights"]'));
@@ -39,10 +40,15 @@ export class NavigationPo extends BasePo {
             await NavigationPo.tms_Defined.click();
             await browser.wait(ExpectedConditions.visibilityOf(element(by.id('front-page-form'))), 10000);
         }
+        else if (pageName == 'TMS Insights') {
+            await NavigationPo.hoverElement(NavigationPo.tms_result_main_menu);
+            await NavigationPo.tms_Defined.click();
+            await browser.wait(ExpectedConditions.visibilityOf(element(by.id('front-page-form'))), 10000);
+        }
         else if (pageName == 'About Us') {
             await NavigationPo.hoverElement(NavigationPo.about_us_main_menu);
             await NavigationPo.about_us.click();
-            await browser.wait(ExpectedConditions.visibilityOf(element(by.xpath("//h1[text()='TMS Insights']"))), 10000);
+            await browser.wait(ExpectedConditions.visibilityOf(element(by.xpath("//h1[text()='About Us']"))), 10000);
         }
 
     }
@@ -114,6 +120,11 @@ export class NavigationPo extends BasePo {
     static async clickOnForProvidersLink(){
         this.scrollToTheEndOfPage();
         await NavigationPo.for_providers_link.click();
+
+    }
+    static async clickOnPortlandLink(){
+        this.scrollToTheEndOfPage();
+        this.clickOnByXpathText("Portland");
 
     }
 

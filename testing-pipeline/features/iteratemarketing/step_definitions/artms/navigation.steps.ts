@@ -1,5 +1,6 @@
 import {browser} from "protractor";
 import {NavigationPo} from "../../pages/artms/navigation.po";
+import {ContactPo} from "../../pages/artms/contact.po";
 
 const chai = require('chai');
 chai.use(require('chai-as-promised'));
@@ -111,6 +112,22 @@ export = function NavigationPoDefinitions() {
 
     this.Then(/^verify that user is on ForProviders page$/, async()=> {
         expect(browser.driver.getCurrentUrl()).to.eventually.contain("patient-providers");
+    });
+
+    this.Then(/^user fill the contact form and click on send message button$/, async ()=> {
+        ContactPo.talkToAProfessional();
+    });
+
+    this.Then(/^Verify that message has been sent$/, async ()=> {
+       expect(ContactPo.waitForSuccessMessage()).to.eventually.equal("Success!");
+    });
+
+    this.Then(/^click on portland link in footer section$/, async ()=> {
+       NavigationPo.clickOnPortlandLink();
+    });
+
+    this.Then(/^Verify that user is on portland page$/, async()=> {
+        expect(browser.driver.getCurrentUrl()).to.eventually.contain("portland-tms-clinic");
     });
 
 }
