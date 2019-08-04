@@ -11,7 +11,7 @@ Feature: Navigate through the TMS application
     Then he open the "Without Medication" page
     Then he open the "TMS Results" page
     Then he open the "TMS Defined" page
-    Then he open the "About Us" page
+#    Then he open the "About Us" page
 
   Scenario: Verify that user is able to navigate patient providers page
     Given that User opens the TMS Home page
