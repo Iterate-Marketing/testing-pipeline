@@ -5,12 +5,12 @@ Feature: Navigate through the TMS application
   User would like to navigate through the application
   to validate it is working as expected
 
-  Scenario: User is able to navigate to others page
-    Given that User opens the TMS Home page
-    Then he open the "Treat Depression" page
-    Then he open the "Without Medication" page
-    Then he open the "TMS Results" page
-    Then he open the "TMS Defined" page
+#  Scenario: User is able to navigate to others page
+#    Given that User opens the TMS Home page
+#    Then he open the "Treat Depression" page
+#    Then he open the "Without Medication" page
+#    Then he open the "TMS Results" page
+#    Then he open the "TMS Defined" page
 #    Then he open the "About Us" page
 
   Scenario: Verify that user is able to navigate patient providers page
