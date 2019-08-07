@@ -78,3 +78,12 @@ Feature: Navigate through the TMS application
     Given that User opens the TMS Home page
     Then click on portland link in footer section
     And Verify that user is on portland page
+
+  Scenario: User is able to navigate to others page and verify tel number
+    Given that User opens the TMS Home page
+    Then he open the "Treat Depression" page
+    And verify Telephone text should equal "(503) 389-0961"
+    Then he open the "Without Medication" page
+    And verify Telephone text should equal "(503) 389-0961"
+    Then he open the "TMS Defined" page
+    And verify Telephone text should equal "(503) 389-0961"

@@ -130,4 +130,20 @@ export = function NavigationPoDefinitions() {
         expect(browser.driver.getCurrentUrl()).to.eventually.contain("portland-tms-clinic");
     });
 
+    this.Then(/^scroll down the page at bottom$/, async()=> {
+        ContactPo.scrollDownPageToBottom();
+    });
+    this.Then(/^user fill the Talk to a professional form with following details$/, async (table) => {
+        ContactPo.talkToAProfessional();
+    });
+    this.Then(/^Verify that user is getting trigger popup message$/, async()=> {
+        expect(ContactPo.waitForSuccessMessage()).to.eventually.equal("Success!");
+    });
+    this.Given(/^user fill the Lasting Relief From Severe Depression form with Following details$/, async (table) =>{
+        ContactPo.fillTheDepressionForm();
+    });
+    this.Then(/^verify Telephone text should equal "([^"]*)"$/, async(phoneNumber:string)=> {
+        expect(NavigationPo.getTelNumber()).to.eventually.equal(phoneNumber);
+    });
+
 }

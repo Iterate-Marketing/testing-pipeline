@@ -5,7 +5,7 @@ const crew = require('serenity-js/lib/stage_crew');
 exports.config = {
     params: {
         communitymgt: 'http://communitymgt.iteratemarketing.com',
-        artms: 'http://artms.iteratemarketing.com',
+        artms: 'https://activerecoverytms.com/?utm_campaign=test&utm_content=test',
     },
 
     capabilities: {

@@ -9,6 +9,11 @@ export class ContactPo extends BasePo {
     private static sendButton: ElementFinder = element(by.id("footer-professional-form-submission"));
     private static sucessBtn: ElementFinder = element(by.className("popup-success-btn"));
 
+    private static frontPageYourName : ElementFinder = element(by.name("front-page-form-your-name"));
+    private static frontPageYourEmail : ElementFinder = element(by.name("front-page-form-your-email"));
+    private static frontPageYourPhone : ElementFinder = element(by.name("front-page-form-your-phone"));
+    private static frontPageSubmitButton : ElementFinder = element(by.id("front-page-form-submission"));
+
     static async talkToAProfessional(){
         ContactPo.scrollToTheEndOfPage();
         var d = new Date();
@@ -16,9 +21,9 @@ export class ContactPo extends BasePo {
             d.getHours() + "" + d.getMinutes();
         let username="Fname" + datestring;
         let email= "test"+datestring+"@gmail.com"
-        let phnumber= "8888888888";
-        ContactPo.uName.sendKeys(username);
-        ContactPo.email.sendKeys(email);
+        let phnumber= "1111111111";
+        ContactPo.uName.sendKeys("TEST");
+        ContactPo.email.sendKeys("test@test.com");
         ContactPo.phoneNumber.sendKeys(phnumber)
         this.sendButton.click();
     }
@@ -27,5 +32,18 @@ export class ContactPo extends BasePo {
         await browser.wait(ExpectedConditions.visibilityOf(element(by.className('popup-success-btn'))), 10000);
         return this.sucessBtn.getText();
     }
+
+    static async scrollDownPageToBottom(){
+        ContactPo.scrollToTheEndOfPage();
+    }
+
+    static async fillTheDepressionForm(){
+        await browser.wait(ExpectedConditions.visibilityOf(element(by.name('front-page-form-your-name'))), 10000);
+        this.frontPageYourName.sendKeys("TEST");
+        this.frontPageYourEmail.sendKeys("test@test.com");
+        this.frontPageYourPhone.sendKeys("1111111111");
+        this.frontPageSubmitButton.click();
+    }
+
 
 }

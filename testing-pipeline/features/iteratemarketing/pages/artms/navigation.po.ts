@@ -20,6 +20,7 @@ export class NavigationPo extends BasePo {
     private static about_footer_link: ElementFinder = element(by.xpath("//a[text()='About']"));
     private static vedio_hub_link: ElementFinder = element(by.xpath("(//a[text()='Helpful Videos'])[2]"));
     private static for_providers_link: ElementFinder = element(by.xpath("(//a[text()='For Providers'])[2]"));
+    private static phone_number: ElementFinder = element(by.className("tel"));
 
     static async clickOnMenuAndVerifyThatPageHasOpen(pageName: string) {
         if (pageName == 'Treat Depression') {
@@ -126,6 +127,13 @@ export class NavigationPo extends BasePo {
         this.scrollToTheEndOfPage();
         this.clickOnByXpathText("Portland");
 
+    }
+    static async getTelNumber(){
+        await browser.wait(ExpectedConditions.visibilityOf(element(by.className('tel'))), 10000);
+        await browser.sleep(1999).then(function () {
+            console.log("Sleep 2 seconds");
+        });
+        return this.phone_number.getText();
     }
 
 }
