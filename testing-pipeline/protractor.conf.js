@@ -4,7 +4,7 @@
  */
 exports.config = {
 
-    baseUrl: 'http://communitymgt.iteratemarketing.com',
+    baseUrl: 'https://www.google.com/',
 
     // directConnect: true,
     seleniumAddress: 'http://10.138.150.250:4444/wd/hub',
