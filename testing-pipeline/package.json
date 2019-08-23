@@ -8,7 +8,8 @@
     "serenity:update": "serenity update",
     "webdriver:update": "webdriver-manager update",
     "pree2e": "npm run clean && npm run serenity:update && npm run webdriver:update",
-    "e2e": "protractor ./protractor.conf.js",
+    "e2e": "protractor protractor.conf.js",
+    "e2e-browserstack": "protractor browserstack.conf.js",
     "e2e-tag": "npm run e2e -- --cucumberOpts.tags",
     "e2e-scenario": "npm run e2e -- --cucumberOpts.name",
     "report": "serenity run"

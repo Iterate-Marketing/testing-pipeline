@@ -11,36 +11,43 @@
 #### Setup
 ```
 git clone 
-cd communitymgt-iteratemarketing
 npm install
 ```
 
-#### Run
+### Running Tests
+These test can be ran using the web browsers on your local machine or using BrowserStack's environments. The tests can be targeting against any provided hosted browser endpoint.
 
-Run the complete workflow. This will execute necessary updates, fail-safe the whole procedure, tslint your code, run the tests, create a report and open it with your browser.
-It will take some time during the first run because it updates Serenity-CLI jar and the web-driver: 
-```
-npm run test
-```
+#### Run tests using your local system web browsers
 
-Run only the lint checks and tests without creating reports:
+##### Run on chrome
 ```
-npm run e2e
+npm run e2e 
 ```
 
-#### Add tests
-
-Create a folder for your feature under `features` folder. Add your `.feature` file and the corresponding steps under a `step_definitions` folder
+##### Run on firefox
 ```
-+-- features
-|    +--my_feauture
-|    |  |--my_feature.feature
-|    |  +--step_definitions
-|    |  |   |--my_feauture.steps.ts
-|    +--another_feauture
-|    |  |--another_feature.feature
-|    |  +--step_definitions
-|    |  |   |--another_feauture.steps.ts
-
+npm run e2e -- --browser firefox
 ```
 
+#### Run using tag
+```
+npm run e2e -- --cucumberOpts.tags @tag_name
+```
+#### Run using Scenario name
+```
+npm run e2e -- --cucumberOpts.name "scenario namw"
+```
+
+#### Run tests Browserstack web browsers
+
+In order to run tests against BrowserStack, auth credentials must be passed as browserstackUser, browserstackKey argument and 
+browsers where its value can be set as chrome, firefox, ie, and for more check capabilities.js file.
+
+```
+npm run e2e-browserstack -- --browserstackUser user --browserstackKey key --browsers=browsername
+```
+
+#### To create HTML report:
+```
+npm run report
+```
