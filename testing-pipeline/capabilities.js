@@ -12,32 +12,14 @@ const capabilitiesList = {
         'resolution': '1024x768',
         'acceptSslCerts': true,
     },
-    'S6': {
-        'os_version': '5.0',
-        'device': 'Samsung Galaxy S6',
-        'real_mobile': 'true',
-        'browserstack.local': 'false',
-        'resolution': '800x600',
-        'acceptSslCerts': true,
-        'deviceOrientation': 'landscape'
-    },
 
-    'iPhone6': {
-        'os_version': '11.2',
-        'device': 'iPhone 6',
-        'real_mobile': 'true',
-        'browserstack.local': 'false',
-        'browserName': 'Chrome',
-        'browser_version': '68.0',
+    'safari': {
+        'browserName' : 'Safari',
+        'browser_version' : '10.0',
+        'os' : 'OS X',
+        'os_version' : 'Sierra',
+        'resolution' : '1024x768',
         'acceptSslCerts': true,
-        'resolution': '800x600',
-    },
-
-    'iPad4': {
-        'os_version': '9.1',
-        'device': 'iPad Mini 4',
-        'browserstack.local': 'false',
-        'acceptSslCerts': true
     },
 
     'ie': {
@@ -47,6 +29,13 @@ const capabilitiesList = {
         'browser_version': '11.0',
         'resolution': '1024x768',
         'acceptSslCerts': true,
+    },
+    'edge':{
+        'browserName' : 'Edge',
+        'browser_version' : '15.0',
+        'os' : 'Windows',
+        'os_version' : '10',
+        'resolution' : '1024x768',
     }
 };
 
