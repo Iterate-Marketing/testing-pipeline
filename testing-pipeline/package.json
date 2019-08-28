@@ -7,6 +7,7 @@
     "clean": "rimraf target",
     "serenity:update": "serenity update",
     "webdriver:update": "webdriver-manager update",
+    "pree2e-browserstack": "npm run clean && npm run serenity:update && npm run webdriver:update",
     "pree2e": "npm run clean && npm run serenity:update && npm run webdriver:update",
     "e2e": "protractor protractor.conf.js",
     "e2e-browserstack": "protractor browserstack.conf.js",
