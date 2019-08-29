@@ -81,6 +81,47 @@ export class NavigationPo extends BasePo {
             case "CMI JOURNAL":
                 await this.clickMainMenuAndSubMenuItem(this.Community_Main_Menu, this.CMI_Journal_Sub_Menu);
                 break;
+
+            case "SERVICES":
+                await this.clickMainMenuAndSubMenuItem(this.Services_Main_Menu, this.Services_Sub_Menu);
+                break;
+
+            case "PROPERTY SERVICES":
+                await this.clickMainMenuAndSubMenuItem(this.Services_Main_Menu, this.Property_Services_Sub_Menu);
+                break;
+
+            case "BUILDING MAINTENANCE":
+                await this.clickMainMenuAndSubMenuItem(this.Services_Main_Menu, this.Building_Maintenance_Sub_Menu);
+                break;
+
+            case "LEGAL":
+                await this.clickMainMenuAndSubMenuItem(this.Involve_Main_Menu, this.Legal_Sub_Menu);
+                break;
+
+            case "PAY":
+                await this.clickMainMenuAndSubMenuItem(this.Involve_Main_Menu, this.Pay_Sub_Menu);
+                break;
+
+            case "PARTNER":
+                await this.clickMainMenuAndSubMenuItem(this.Involve_Main_Menu, this.Partner_Sub_Menu);
+                break;
+
+            case "FAQ'S":
+                await this.clickMainMenuAndSubMenuItem(this.Involve_Main_Menu, this.FAQS_Sub_Menu);
+                break;
+
+            case "SERVICE REQUEST":
+                await this.clickMainMenuAndSubMenuItem(this.Involve_Main_Menu, this.Service_Request_Form_Sub_Menu);
+                break;
+
+            case "KNOWLEDGE":
+                await this.clickMainMenuAndSubMenuItem(this.Involve_Main_Menu, this.Knowledge_Sub_Menu);
+                break;
+
+            case "INVOLVE":
+                await this.clickMainMenuAndSubMenuItem(this.Involve_Main_Menu, this.Involve_Sub_Menu);
+                break;
+
         }
     }
 

@@ -29,6 +29,13 @@ Feature: Contact through the TMS application
       | Your Phone     | 1111111111       |
     Then Verify that user is getting trigger popup message
 
-
-
+  Scenario: Verify that user is able to BOOK A FREE CONSULATION REQUEST
+    Given that User opens the TMS Home page
+    Then user navigate to "phq-9-test-online" URL
+    And user fill the Talk to a professional form with following details
+      |Element         | Value            |
+      | Your Name      | TEST             |
+      | Your Email     | test@test.com    |
+      | Your Phone     | 1111111111       |
+    Then Verify that user is getting trigger popup message
 
