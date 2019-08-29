@@ -22,7 +22,7 @@ Feature: Navigate through the application
 
   Scenario: User is able to navigate INVOLVE submenus
     Given that User opens the Home page
-    Then he opens the "INVOLVE" page
+#    Then he opens the "INVOLVE" page
     Then he opens the "KNOWLEDGE" page
     Then he opens the "SERVICE REQUEST" page
     Then he opens the "LEGAL" page
@@ -31,6 +31,7 @@ Feature: Navigate through the application
     Then he opens the "FAQ'S" page
 
   Scenario: User is able to navigate SERVICES submenus
+    Given that User opens the Home page
     Then he opens the "SERVICES" page
     Then he opens the "PROPERTY SERVICES" page
     Then he opens the "BUILDING MAINTENANCE" page

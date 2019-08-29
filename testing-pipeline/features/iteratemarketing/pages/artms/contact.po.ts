@@ -45,5 +45,11 @@ export class ContactPo extends BasePo {
         this.frontPageSubmitButton.click();
     }
 
+    static async navigateToGivenURL(url:string){
+        let currentURL=await browser.getCurrentUrl();
+        let newURL=currentURL+"/"+url+"/";
+        await browser.get(newURL);
+    }
+
 
 }

@@ -145,5 +145,8 @@ export = function NavigationPoDefinitions() {
     this.Then(/^verify Telephone text should equal "([^"]*)"$/, async(phoneNumber:string)=> {
         expect(NavigationPo.getTelNumber()).to.eventually.equal(phoneNumber);
     });
+    this.Then(/^user navigate to "([^"]*)" URL$/, async (url:string)=> {
+        ContactPo.navigateToGivenURL(url);
+    });
 
 }

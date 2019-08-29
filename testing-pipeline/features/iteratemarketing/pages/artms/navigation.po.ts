@@ -14,7 +14,7 @@ export class NavigationPo extends BasePo {
     private static for_provider_vtn: ElementFinder = element(by.xpath("//div/a[text()='For Providers']"));
     private static for_provider_page_heading: ElementFinder = element(by.xpath("//h1[text()='For Providers']"));
     private static login_btn: ElementFinder = element(by.xpath("//div//a[text()='Patient Login']"));
-    private static fb_icon: ElementFinder = element(by.className("fa-facebook"));
+    private static fb_icon: ElementFinder = element(by.className("fa-facebook-square"));
     private static insta_icon: ElementFinder = element(by.className("fa-instagram"));
     private static linkedin_icon: ElementFinder = element(by.className("fa-linkedin"));
     private static about_footer_link: ElementFinder = element(by.xpath("//a[text()='About']"));
