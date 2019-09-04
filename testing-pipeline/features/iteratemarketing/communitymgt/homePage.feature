@@ -12,11 +12,11 @@ Feature: Home page
    Then user click on Read More button in  PROPERTY SERVICES section
    And Verify that Read more Button convert into read Less Button inService section
 
-  Scenario: Verify that user is able to fill the Let's connect form
-    Given that User opens the Home page
-    Then user click on let's connect button
-    And user fill the let's connect form and click on Submit button
-    Then verify submit button text convert into success
+#  Scenario: Verify that user is able to fill the Let's connect form
+#    Given that User opens the Home page
+#    Then user click on let's connect button
+#    And user fill the let's connect form and click on Submit button
+#    Then verify submit button text convert into success
 
   Scenario: Verify that search result is shown according to user
     Given that User opens the Home page
