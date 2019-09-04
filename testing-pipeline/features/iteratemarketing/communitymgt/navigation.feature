@@ -39,3 +39,25 @@ Feature: Navigate through the application
   Scenario: Verify that user can navigate to CODE OF ETHICS page
     Given that User opens the Home page
     When he opens the CODE OF ETHICS page
+
+  Scenario: Verify that user can navigates to CONFLICT OF INTEREST page
+    Given that User opens the Home page
+    When he opens the CONFLICT OF INTEREST page
+
+  Scenario: Verify that user can navigates to HELP US GROW page
+    Given that User opens the Home page
+    When he opens the HELP US GROW page
+
+  Scenario: Verify that user can navigates to PRIVACY POLICY page
+    Given that User opens the Home page
+    When he opens the PRIVACY POLICY page
+
+  Scenario: Verify that user can navigates to TESTIMONIALS page
+    Given that User opens the Home page
+    When he opens the TESTIMONIALS page
+
+  Scenario: Verify that user can navigates to DIRECTORY page
+    Given that User opens the Home page
+    When he opens the DIRECTORY page
+
+
