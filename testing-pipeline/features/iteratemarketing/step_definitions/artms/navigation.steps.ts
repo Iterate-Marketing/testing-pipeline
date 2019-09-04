@@ -1,6 +1,7 @@
 import {browser} from "protractor";
 import {NavigationPo} from "../../pages/artms/navigation.po";
 import {ContactPo} from "../../pages/artms/contact.po";
+import {TmsresultsPo} from "../../pages/artms/tmsresults.po";
 
 const chai = require('chai');
 chai.use(require('chai-as-promised'));
@@ -148,5 +149,21 @@ export = function NavigationPoDefinitions() {
     this.Then(/^user navigate to "([^"]*)" URL$/, async (url:string)=> {
         ContactPo.navigateToGivenURL(url);
     });
+    this.Then(/^Verify that INTERACTIVE QUESTIONNAIRE is displayed$/, async()=> {
+        expect(TmsresultsPo.getPageTitle()).to.eventually.equal("PHQ-9 INTERACTIVE QUESTIONNAIRE");
+    });
+    this.Then(/^user navigate to phqtestonline test url$/, async()=> {
+        await browser.get("https://activerecoverytms.com/phq-9-test-online/?utm_campaign=test&utm_content=test");
+    });
+    this.Then(/^user fill out the radio input in form$/, async()=> {
+        TmsresultsPo.filloutTheRadioOptionForm();
+    });
+    this.Then(/^user fill the get result form and click on get result button$/, async()=> {
+        TmsresultsPo.fiilTheGetResultFrom();
+    });
+    this.Then(/^user click on request contact button button$/, async()=> {
+        TmsresultsPo.fiilTheGetResultFrom();
+    });
+
 
 }

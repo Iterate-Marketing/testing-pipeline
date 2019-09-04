@@ -39,3 +39,10 @@ Feature: Contact through the TMS application
       | Your Phone     | 1111111111       |
     Then Verify that user is getting trigger popup message
 
+   Scenario: phq-9-test-online
+     Then user navigate to phqtestonline test url
+     And Verify that INTERACTIVE QUESTIONNAIRE is displayed
+     Then user fill out the radio input in form
+     Then user fill the get result form and click on get result button
+     And user click on request contact button button
+
