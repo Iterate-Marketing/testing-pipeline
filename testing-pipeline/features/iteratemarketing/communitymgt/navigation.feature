@@ -52,12 +52,12 @@ Feature: Navigate through the application
     Given that User opens the Home page
     When he opens the PRIVACY POLICY page
 
-  Scenario: Verify that user can navigates to TESTIMONIALS page
-    Given that User opens the Home page
-    When he opens the TESTIMONIALS page
+#  Scenario: Verify that user can navigates to TESTIMONIALS page
+#    Given that User opens the Home page
+#    When he opens the TESTIMONIALS page
 
-  Scenario: Verify that user can navigates to DIRECTORY page
-    Given that User opens the Home page
-    When he opens the DIRECTORY page
+#  Scenario: Verify that user can navigates to DIRECTORY page
+#    Given that User opens the Home page
+#    When he opens the DIRECTORY page
 
 
