@@ -186,7 +186,7 @@ export = function NavigationPoDefinitions() {
         });
 
     this.Then(/^he open CONNECT WITH US page$/,async()=> {
-        await CommunityPo.clickOnconnectWithUsLink();
+        await CommunityPo.clickOnConnectWithUsLink();
         // expect(await browser.getCurrentUrl()).contain('connect', "'CONNECT WITH US' page is not opened.");
     });
 

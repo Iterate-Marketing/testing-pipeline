@@ -49,7 +49,7 @@ export class HomePo extends BasePo{
     }
 
     static async clickOnDirectoryButton(){
-        var directory_btn = browser.findElements(by.css(".read-more-btn"))
+        var directory_btn = browser.findElements(by.css(".read-more-btn"));
         await browser.executeScript("arguments[0].scrollIntoView();", HomePo.directory.getWebElement());
         await HomePo.directory.click();
     }

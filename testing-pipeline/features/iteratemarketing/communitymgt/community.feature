@@ -5,6 +5,7 @@ Feature: Management page
   all functionality is working fine of
   Community Page as expected.
 
+  @t1
   Scenario: User is able to navigate Connect with Us page
     Given that User opens the Home page
     Then he opens the "COMMUNITY" page
