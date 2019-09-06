@@ -148,7 +148,7 @@ export = function NavigationPoDefinitions() {
 
     this.Then(/^he click on VIEW CONCIERGE SERVICES Link$/, async()=> {
         await ManagementPo.clickOnViewConciergeServicesLink();
-        expect(await browser.getCurrentUrl()).contain('services', "'SERVICES' page is not opened.");
+        await expect(await browser.getCurrentUrl()).contain('services', "'SERVICES' page is not opened.");
     });
 
     this.Then(/^he click on VIEW GENERAL SERVICES Link$/, async()=> {
@@ -187,7 +187,32 @@ export = function NavigationPoDefinitions() {
 
     this.Then(/^he open CONNECT WITH US page$/,async()=> {
         await CommunityPo.clickOnConnectWithUsLink();
-        // expect(await browser.getCurrentUrl()).contain('connect', "'CONNECT WITH US' page is not opened.");
+        expect(await browser.getCurrentUrl()).contain('connect', "'CONNECT WITH US' page is not opened.");
+    });
+
+    this.Then(/^User click on MEET THE TEAM button$/, async()=> {
+        await CommunityPo.clickOnMeetTheTeamBtn();
+        expect(await browser.getCurrentUrl()).contain('caliber', "'caliber' page is not opened.");
+    });
+
+    this.Then(/^verify that user is on caliber page$/, async()=> {
+        expect(await CommunityPo.getPageTitle()).equal("CALIBER");
+    });
+
+    this.Then(/^user click on View profile button$/, async()=> {
+        await CommunityPo.clickOnViewProfileBtn();
+    });
+
+    this.Then(/^verify that team profile is displayed$/, async()=> {
+        expect(await CommunityPo.getProfilePageText()).equal("EMAIL");
+    });
+
+    this.Then(/^verify that user is on Feedback page$/, async()=> {
+        expect(await CommunityPo.getFeedBackTitle()).equal("FEEDBACK & TESTIMONIALS FOR COMMUNITY MANAGEMENT INC");
+    });
+
+    this.Then(/^Verify that user is able to see reputation page$/, async()=> {
+        expect(await CommunityPo.getFeedBackTitle()).equal("FEEDBACK & TESTIMONIALS FOR COMMUNITY MANAGEMENT INC");
     });
 
 

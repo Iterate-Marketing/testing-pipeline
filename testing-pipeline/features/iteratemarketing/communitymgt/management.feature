@@ -7,8 +7,7 @@ Feature: Management page
 
   Scenario: User is able to navigate VIEW JANITOR AND PORTER SERVICES Page
     Given that User opens the Home page
-    Then he click on management link
-    Then he opens Management Page
+    Then he opens the "MANAGEMENT" page
     Then he click on VIEW JANITOR AND PORTER SERVICES Link
 
 
