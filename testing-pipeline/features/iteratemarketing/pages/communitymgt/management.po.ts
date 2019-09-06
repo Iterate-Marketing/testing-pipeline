@@ -27,38 +27,39 @@ export class ManagementPo extends BasePo{
     }
 
     static async clickOnViewJanitorAndPorterServicesLink() {
-        await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.view_Janitor_and_Porter_Services.getWebElement());
-        await ManagementPo.view_Janitor_and_Porter_Services.click();
+        this.clickClassButton("green-button","VIEW JANITOR AND PORTER SERVICES");
+        await browser.sleep(1999);
     }
 
     static async clickOnViewConciergeServicesLink() {
-        await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.view_Concierge_Services.getWebElement());
-        await ManagementPo.view_Concierge_Services.click();
+        this.clickClassButton("green-button","VIEW CONCIERGE SERVICES");
+        await browser.sleep(1999);
     }
 
     static async clickOnViewGeneralServicesLink() {
-        await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.view_General_Services.getWebElement());
-        await ManagementPo.view_General_Services.click();
+        // await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.view_General_Services.getWebElement());
+        this.clickClassButton("green-button","VIEW GENERAL SERVICES");
+        await browser.sleep(2999);
     }
 
     static async clickOnViewPropertyManagementLink() {
-        await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.view_Property_Management.getWebElement());
-        await ManagementPo.view_Property_Management.click();
+        this.clickClassButton("green-button","VIEW PROPERTY MANAGEMENT");
+        await browser.sleep(2999);
     }
 
     static async clickOnViewPropertyServicesLink() {
-        await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.view_Property_Services.getWebElement());
-        await ManagementPo.view_Property_Services.click();
+        this.clickClassButton("green-button","VIEW PROPERTY SERVICES");
+        await browser.sleep(2999);
     }
 
     static async clickOnReadOurFeedbackLink(){
-        await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.read_Our_Feedback.getWebElement());
-        await ManagementPo.read_Our_Feedback.click();
+        await this.clickClassButton("green-button","READ OUR FEEDBACK");
+        await browser.sleep(2999);
     }
 
     static async clickOnViewBuildingMaintenanceLink(){
-        await browser.executeScript("arguments[0].scrollIntoView();", ManagementPo.view_Building_Maintenance.getWebElement());
-        await ManagementPo.view_Building_Maintenance.click();
+        await this.clickClassButton("green-button","VIEW BUILDING MAINTENANCE");
+        await browser.sleep(2999);
     }
 
 
